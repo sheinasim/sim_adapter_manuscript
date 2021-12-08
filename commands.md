@@ -1,3 +1,13 @@
+# HiFiAdapterFilt 
+
+## Usage:
+
+```
+hifiadapterfilt.sh [ -p sequence file Prefix ] [ -l minimum match Length to filter. Default=44 ] [ -m minimum Match percentage to filter. Default=97]  [ -t number of Threads for blastn. Default=8 ] [ -o Outdirectory prefix Default=. ]
+```
+
+# HiFiAdapterFilt functions deconstructed
+
 ## BLAST script to identify PacBio Blunt Adapter sequence in raw reads
 
 ```
@@ -16,7 +26,7 @@ cat ${taxa}.contaminant.blastout | grep 'NGB00972' | awk -v OFS='\t' '{if ($3 >=
 cat ${taxa}.fastq | paste - - - - | grep -v -f ${taxa}.blocklist -F | tr "\t" "\n" > ${taxa}_filt.fastq
 ```
 
-## Cutadapt-filt assembly
+# Cutadapt-filt command 
 
 ```
 for x in `ls ${taxa}.fastq | sed 's/.fastq//'`
@@ -26,6 +36,8 @@ do
     --discard-trimmed -o ${x}.cutadaptfilt.fastq ${x}.fastq -j 40 --revcomp -e 0.1 2> ${x}.report.txt
 done
 ```
+
+# Assembly commands
 
 ## Default hifiasm command 
 
