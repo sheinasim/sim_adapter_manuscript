@@ -3,7 +3,7 @@
 ## Usage:
 
 ```
-hifiadapterfilt.sh [ -p sequence file Prefix ] [ -l minimum match Length to filter. Default=44 ] [ -m minimum Match percentage to filter. Default=97]  [ -t number of Threads for blastn. Default=8 ] [ -o Outdirectory prefix Default=. ]
+bash hifiadapterfilt.sh [ -p sequence file Prefix ] [ -l minimum match Length to filter. Default=44 ] [ -m minimum Match percentage to filter. Default=97]  [ -t number of Threads for blastn. Default=8 ] [ -o Outdirectory prefix Default=. ]
 ```
 
 # HiFiAdapterFilt functions deconstructed
